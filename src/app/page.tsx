@@ -1,13 +1,13 @@
 'use client'
 
-import Image from "next/image";
-import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import OurStory from "./components/Our_Story";
 
 export default function Home() {
   return (
     <>
         <HeroSection />
+        <OurStory />
     </>
   );
 }

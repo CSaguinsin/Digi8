@@ -3,10 +3,10 @@ import { Button } from "@material-tailwind/react";
 
 export default function HeroComponent() {
   return(
-    <div className="flex flex-col justify-center items-center gap-8 pt-[5rem]"> {/* Controlled gap */}
+    <div className="flex flex-col justify-center items-center relative z-20 pt-[7rem]"> {/* Added z-index */}
 <button
   type="button"
-  className="rounded-xl focus:outline-none text-[3rem] text-white py-5 leading-none px-5  inline-flex items-center justify-center whitespace-nowrap bg-red-700 hover:bg-red-800 transition-all"
+  className="rounded-xl border-2 font-archivo-black text-4xl border-white focus:outline-none text-[2rem] text-white py-5 leading-none px-5 inline-flex items-center justify-center whitespace-nowrap bg-red-700 hover:bg-red-800 transition-all"
 >
   ON AIR
 </button>
