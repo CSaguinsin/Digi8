@@ -7,6 +7,8 @@ import Footer from "./components/Footer"
 import Client_Partners from "./components/Client_Partners";
 import Studio from "./components/StudioComponent";
 import Testimonials from "./components/Testimonials";
+import OurEdge from "./components/Our_Edge"
+import ContactUs from "./components/ContactUs"
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
         <Client_Partners />
         <Studio />
         <Testimonials />
+        <OurEdge />
+        <ContactUs />
         <Footer />
     </>
   );
