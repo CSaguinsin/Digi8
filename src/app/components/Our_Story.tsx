@@ -36,8 +36,8 @@ export default function OurStory() {
   return (
     <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4 sm:px-6 lg:px-8">
       <motion.h1
-        className="text-center font-bold text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-12"
-        initial={{ opacity: 0, y: -20 }}
+    className="text-center font-bold font-archivo-black text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-12"
+    initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
