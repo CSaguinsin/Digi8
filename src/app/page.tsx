@@ -3,6 +3,7 @@
 import HeroSection from "./components/HeroSection";
 import OurStory from "./components/Our_Story";
 import OurOffers from "./components/Our_Offers";
+import Footer from "./components/Footer"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <HeroSection />
         <OurStory />
         <OurOffers />
+        <Footer />
     </>
   );
 }
