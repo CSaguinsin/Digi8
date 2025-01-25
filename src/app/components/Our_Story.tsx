@@ -1,13 +1,18 @@
-'use client'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function OurStory() {
   const images = [
-    { src: '/assets/graphics/Digi8-WebMat1.jpg', alt: 'Image 1' },
-    { src: '/assets/graphics/Digi8-WebMat2.jpg', alt: 'Image 2' },
-    { src: '/assets/graphics/Digi8-WebMat3.jpg', alt: 'Image 3' },
-    { src: '/assets/graphics/Digi8-WebMat4.jpg', alt: 'Image 4' },
+    { src: "/assets/graphics/Digi8-WebMat1.jpg", alt: "Image 1" },
+    { src: "/assets/graphics/Digi8-WebMat2.jpg", alt: "Image 2" },
+    { src: "/assets/graphics/Digi8-WebMat3.jpg", alt: "Image 3" },
+    { src: "/assets/graphics/Digi8-WebMat4.jpg", alt: "Image 4" },
   ]
 
   const [currentImage, setCurrentImage] = useState(0)
@@ -15,78 +20,97 @@ export default function OurStory() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length)
-    }, 3000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [images.length])
 
-  const handleImageClick = (index: number) => {
-    setCurrentImage(index)
+  const handleImageChange = (direction: "next" | "prev") => {
+    if (direction === "next") {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    } else {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+    }
   }
 
   return (
-    <section className="bg-[#1e2328] pt-20">
-      <h1 className="text-center font-archivo-black text-[4rem] bg-gradient-to-r from-[#F4B301] to-[#999999] bg-clip-text text-transparent px-40">
+    <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4 sm:px-6 lg:px-8">
+      <motion.h1
+        className="text-center font-bold text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         Our Story
-      </h1>
-      <div className="flex flex-col items-center mt-20">
-        {/* Main image with transition */}
-        <div className="relative h-[500px] w-full max-w-4xl overflow-hidden">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentImage 
-                  ? 'opacity-100 z-10' 
-                  : 'opacity-0 z-0'
-              }`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-lg"
-                priority={index === 0}
-              />
+      </motion.h1>
+      <div className="max-w-7xl mx-auto">
+        <Card className="bg-gray-800 border-gray-700">
+          <CardContent className="p-6">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full mb-8">
+              {images.map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === currentImage ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                    priority={index === 0}
+                  />
+                </motion.div>
+              ))}
+              <div className="absolute inset-0 flex items-center justify-between p-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => handleImageChange("prev")}
+                  className="bg-black/50 hover:bg-black/70 text-white"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => handleImageChange("next")}
+                  className="bg-black/50 hover:bg-black/70 text-white"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
             </div>
-          ))}
-        </div>
-
-        {/* Thumbnail images */}
-        <div className="flex justify-center space-x-4 mt-8">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`relative h-24 w-24 cursor-pointer rounded-lg overflow-hidden ${
-                index === currentImage ? 'ring-2 ring-blue-500' : ''
-              }`}
-              onClick={() => handleImageClick(index)}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                layout="fill"
-                objectFit="cover"
-              />
+            <div className="flex justify-center space-x-2 mb-8">
+              {images.map((_, index) => (
+                <Button
+                  key={index}
+                  variant="ghost"
+                  size="sm"
+                  className={`w-3 h-3 rounded-full p-0 ${index === currentImage ? "bg-yellow-400" : "bg-gray-600"}`}
+                  onClick={() => setCurrentImage(index)}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-
-        {/* Text content */}
-        <div className="mt-8 max-w-4xl">
-          <p className="text-white text-[1.5rem]">
-            Digi-8 Studios has a unique pool of talents — the very best and
-            seasoned voice actors/dubbers in the country as well as
-            scriptwriters, translators, captionists, and sound engineers. Our
-            voice actors and dubbers can work effectively not only in Filipino
-            and English, but also in different Filipino languages such as
-            Ilocano and Cebuano. Armed with these resources, as well as up-to-
-            date hardware and software, we are committed to providing the best
-            production services to our clients.
-          </p>
-        </div>
+            <motion.p
+              className="text-gray-300 text-lg sm:text-xl leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Digi-8 Studios boasts a unique pool of talents — the very best and seasoned voice actors and dubbers in
+              the country, alongside skilled scriptwriters, translators, captionists, and sound engineers. Our voice
+              actors and dubbers excel not only in Filipino and English but also in various Filipino languages such as
+              Ilocano and Cebuano. Equipped with these exceptional resources and cutting-edge hardware and software, we
+              are dedicated to delivering unparalleled production services to our clients.
+            </motion.p>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )
 }
+
