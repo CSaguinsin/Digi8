@@ -57,9 +57,14 @@ const Navbar = () => {
 
           {/* Desktop Right Side */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="bg-[#F5B301] px-4 py-2 rounded-full flex items-center gap-2">
+            <button
+              className="bg-[#F5B301] px-4 py-2 font-sans rounded-full flex items-center gap-2
+                         hover:bg-[#F5B301]/90 transition-colors"
+              onClick={() => {/* Add your click handler here */}}
+              type="button"
+            >
               <span className="text-sm font-medium">Work with us!</span>
-            </div>
+            </button>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -102,16 +107,24 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg
-                       transition-colors font-medium"
+                       transition-colors font-sans"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
             </Link>
           ))}
           <div className="pt-4 mt-4 border-t border-white/10">
-            <div className="bg-[#F5B301] px-4 py-3 rounded-full flex items-center justify-center gap-2">
+            <button
+              className="w-full bg-[#F5B301] px-4 py-3 font-sans rounded-full flex items-center justify-center gap-2
+                         hover:bg-[#F5B301]/90 transition-colors"
+              onClick={() => {
+                /* Add your click handler here */
+                setMobileMenuOpen(false)
+              }}
+              type="button"
+            >
               <span className="font-medium">Work with us!</span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
