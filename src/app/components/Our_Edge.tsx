@@ -47,7 +47,7 @@ export default function OurEdge() {
                 </p>
               </div>
               <p className="text-gray-300">
-                She has consistently been the most sought-after dubbing supervisor among the country's top caliber and
+                She has consistently been the most sought-after dubbing supervisor among the countrys top caliber and
                 award-winning actors
               </p>
             </motion.div>

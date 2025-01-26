@@ -15,7 +15,6 @@ const images = [
 
 export function StudioCarousel() {
   const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {

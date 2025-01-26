@@ -1,17 +1,10 @@
 'use client'
 
-import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
 import Navbar from "../components/Navbar";
 import HeroComponent from "./HeroSection_Component"
 
 export default function HeroSection() {
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
-  
-    useEffect(() => {
-      setMounted(true)
-    }, [])
+
   
     return(
         <div className="relative">
