@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { StudioCarousel } from "./studio-carousel"
 
+
 export default function Studio() {
   return (
     <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
@@ -14,7 +15,7 @@ export default function Studio() {
       >
         Studio
       </motion.h1>
-      <p className="text-white font-thin text-center px-[5rem] mb-10">
+      <p className="text-white font-sans text-center px-[5rem] mb-10">
       For over 25 years, Digi-8 Studios has established itself as a company that produces <br></br> excellent work quality, has sound business ethics, and delivers what it promises.
       </p>      
       <StudioCarousel />

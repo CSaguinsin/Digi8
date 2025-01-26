@@ -54,7 +54,7 @@ export default function Footer() {
             </svg>
         </a>
         </div>
-        <span className="text-lg text-gray-500 text-center block">
+        <span className="text-lg text-gray-500 font-sans text-center block">
             ©<a href="https://pagedone.io/">Digi8</a> All rights received 2025.
         </span>
     </section>

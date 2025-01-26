@@ -57,14 +57,13 @@ const Navbar = () => {
 
           {/* Desktop Right Side */}
           <div className="hidden md:flex items-center gap-4">
-            <button
+            <a
+              href="mailto:digi8studios@yahoo.com"
               className="bg-[#F5B301] px-4 py-2 font-sans rounded-full flex items-center gap-2
-                         hover:bg-[#F5B301]/90 transition-colors"
-              onClick={() => {/* Add your click handler here */}}
-              type="button"
+                         hover:bg-[#F5B301]/90 transition-colors cursor-pointer"
             >
               <span className="text-sm font-medium">Work with us!</span>
-            </button>
+            </a>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -114,17 +113,14 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="pt-4 mt-4 border-t border-white/10">
-            <button
+            <a
+              href="mailto:digi8studios@yahoo.com"
               className="w-full bg-[#F5B301] px-4 py-3 font-sans rounded-full flex items-center justify-center gap-2
-                         hover:bg-[#F5B301]/90 transition-colors"
-              onClick={() => {
-                /* Add your click handler here */
-                setMobileMenuOpen(false)
-              }}
-              type="button"
+                         hover:bg-[#F5B301]/90 transition-colors text-center"
+              onClick={() => setMobileMenuOpen(false)}
             >
               <span className="font-medium">Work with us!</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

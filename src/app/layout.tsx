@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const archivoBlack = Archivo_Black({
   weight: '400',
   subsets: ['latin'],
-  variable: "--font-archivo-black", // Add variable for CSS custom property
+  variable: "--font-archivo-black",
 });
 
 const poppins = Poppins({
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
         className={`
           ${geistSans.variable} 
@@ -43,9 +43,14 @@ export default function RootLayout({
           ${archivoBlack.variable} 
           ${poppins.variable}
           antialiased
+          h-full
         `}
       >
-        {children}
+        <div className="background-container">
+          <div className="content-wrapper">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
