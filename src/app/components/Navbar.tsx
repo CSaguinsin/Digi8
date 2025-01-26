@@ -22,20 +22,20 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="fixed w-full z-10 bg-white/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed w-full z-50 bg-white/20 backdrop-blur-sm border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-            <Image 
-                src="/assets/logo/digi.png"  // Updated path
+              <Image 
+                src="/assets/logo/digi.png"
                 alt="Digi8 Logo" 
                 width={150} 
                 height={150} 
                 priority 
-                className="w-auto h-12 md:h-16" 
-                />
+                className="w-auto h-10 sm:h-12 md:h-16" 
+              />
             </Link>
           </div>
 
@@ -46,7 +46,8 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-[#F5B301] font-sans text-[1rem] hover:bg-white hover:bg-opacity-20 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-[#F5B301] font-sans hover:text-[#F5B301]/80 transition-colors
+                           px-3 py-2 text-sm md:text-base"
                 >
                   {item.name}
                 </Link>
@@ -54,24 +55,38 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right side items */}
-          <div className="hidden md:flex items-center">
-            <div className="bg-[#F5B301] p-2 space-x-2 rounded-full mr-4">
-             <p>Work with us!</p>
+          {/* Desktop Right Side */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="bg-[#F5B301] px-4 py-2 rounded-full flex items-center gap-2">
+              <span className="text-sm font-medium">Work with us!</span>
             </div>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
             >
-              {mounted && theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              {mounted && theme === "dark" ? (
+                <Sun size={20} className="text-white" />
+              ) : (
+                <Moon size={20} className="text-white" />
+              )}
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-full hover:bg-white/10"
+            >
+              {mounted && theme === "dark" ? (
+                <Sun size={20} className="text-white" />
+              ) : (
+                <Moon size={20} className="text-white" />
+              )}
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:bg-white hover:bg-opacity-20 inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
+              className="text-white hover:bg-white/10 p-2 rounded-md"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -79,37 +94,29 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-90">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white hover:bg-white hover:bg-opacity-20 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          <div className="flex items-center justify-between px-4 py-3">
-            <div className="bg-[#F5B301] p-2 rounded-full">
-              <Image src="/logo-icon.png" alt="Logo Icon" width={24} height={24} />
-            </div>
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
+      {/* Mobile Menu */}
+      <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} transition-all duration-300`}>
+        <div className="bg-black/95 px-4 py-4 space-y-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg
+                       transition-colors font-medium"
+              onClick={() => setMobileMenuOpen(false)}
             >
-              {mounted && theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+              {item.name}
+            </Link>
+          ))}
+          <div className="pt-4 mt-4 border-t border-white/10">
+            <div className="bg-[#F5B301] px-4 py-3 rounded-full flex items-center justify-center gap-2">
+              <span className="font-medium">Work with us!</span>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   )
 }
 
 export default Navbar
-

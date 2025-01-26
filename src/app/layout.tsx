@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Archivo_Black, Geist_Mono } from "next/font/google";
+import { Geist, Archivo_Black, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +16,12 @@ const archivoBlack = Archivo_Black({
   weight: '400',
   subsets: ['latin'],
   variable: "--font-archivo-black", // Add variable for CSS custom property
+});
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = {
@@ -35,6 +41,7 @@ export default function RootLayout({
           ${geistSans.variable} 
           ${geistMono.variable} 
           ${archivoBlack.variable} 
+          ${poppins.variable}
           antialiased
         `}
       >
