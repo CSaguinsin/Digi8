@@ -2,6 +2,7 @@
 
 import { motion, useAnimation } from "framer-motion"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 interface CarouselItemProps {
   src: string
@@ -12,10 +13,14 @@ interface CarouselItemProps {
 const CarouselItem = ({ src, className = "", imgClassName = "" }: CarouselItemProps) => {
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <img
-        src={src}
-        className={`${imgClassName} filter transition-transform duration-300 hover:scale-105`}
-      />
+<Image
+  src={src}
+  width={100}
+  height={100}
+  alt="Descriptive text here"
+  className={`${imgClassName} filter transition-transform duration-300 hover:scale-105`}
+/>
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       <div className="absolute bottom-6 left-4 right-4 text-white">
       </div>
