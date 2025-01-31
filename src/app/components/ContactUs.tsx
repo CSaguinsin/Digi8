@@ -50,7 +50,7 @@ export default function ContactUs() {
           </div>
 
           <Button 
-            className="mt-8 bg-gray-200 font-sans text-gray-800 hover:bg-gray-300 px-8 py-2 rounded-md text-lg"
+            className="mt-8 bg-gray-200 rounded-xl font-sans text-gray-800 hover:bg-gray-300 px-8 py-2  text-lg"
             onClick={() => window.location.href = 'mailto:digi8studios@yahoo.com'}
           >
             Contact Us
