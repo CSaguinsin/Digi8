@@ -40,11 +40,11 @@ export default function HeroComponent() {
       {/* Buttons Container */}
       <div className="flex flex-row flex-wrap justify-center gap-3 md:gap-6 w-full px-4 mt-6 md:mt-8">
         <button
-          className="rounded-full font-sans py-2 px-4 md:py-4 md:px-8 border-2 border-transparent 
+          className="rounded-full font-sans py-2 px-4 md:py-4 md:px-8 
                     text-sm md:text-base font-semibold text-white 
                     transition-all duration-300 shadow-lg hover:shadow-xl 
-                    bg-gradient-to-r from-[#F4B301] to-[#7373739E]
-                    hover:from-[#F4B301CC] hover:to-[#737373CC]
+                    bg-gradient-to-r from-yellow-500 to-gray-500
+                    hover:from-yellow-600 hover:to-gray-600
                     active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50
                     min-w-[140px] md:min-w-[160px] flex items-center justify-center gap-2"
           type="button"

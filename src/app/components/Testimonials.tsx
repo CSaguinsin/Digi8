@@ -47,8 +47,8 @@ export default function Testimonials() {
     },
     {
       id: 2,
-      name: "Alex Rivera",
-      role: "Independent Artist",
+      name: "Jamie Cruz",
+      role: "Podcaster",
       content: "Ive never experienced such a professional and welcoming studio environment. The engineers at [Studio Name] are experts in their craft, offering valuable insights that took my podcast to the next level. Highly recommend them for anyone looking to create top-notch content!",
       rating: 5,
       image: "/alex-rivera.jpg" 
@@ -143,7 +143,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-8 relative h-1 bg-gray-700 rounded-full">
+        <div className="mt-8 relative h-0.5 w-1/3 mx-auto bg-gray-700 rounded-full">
           <motion.div
             className="absolute h-full bg-yellow-400 rounded-full"
             animate={{ 

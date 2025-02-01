@@ -77,13 +77,13 @@ export function StudioCarousel() {
                  >
                    <div className="relative h-full w-full rounded-lg 
 overflow-hidden">
-                     <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover rounded-3xl relative z-10"
-                      priority={index === 0}
-                     />
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover rounded-xl relative z-10 border-2 border-yellow-500 shadow-[0_0_10px_3px_rgba(234,179,8,0.3)]"
+                    priority={index === 0}
+                  />
                    </div>
                  </motion.div>
                </CarouselItem>
