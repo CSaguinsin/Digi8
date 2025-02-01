@@ -6,35 +6,44 @@ import Image from "next/image"
 
 interface CarouselItemProps {
   src: string
-  className?: string
-  imgClassName?: string
+  label?: string
 }
 
-const CarouselItem = ({ src, className = "", imgClassName = "" }: CarouselItemProps) => {
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-<Image
-  src={src}
-  width={100}
-  height={100}
-  alt="Descriptive text here"
-  className={`${imgClassName} filter transition-transform duration-300 hover:scale-105`}
-/>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="absolute bottom-6 left-4 right-4 text-white">
-      </div>
+const CarouselItem = ({ src, label }: CarouselItemProps) => (
+  <div className="relative overflow-hidden rounded-xl border border-yellow-500 shadow-lg">
+    <div className="relative w-full aspect-[3/4]">
+      <Image
+        src={src}
+        fill
+        alt={label || "Service Image"}
+        className="object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+      />
+      {/* Yellow Gradient Overlay at Bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-yellow-500/40 to-transparent rounded-b-xl" />
     </div>
-  )
-}
 
+    {/* Dark Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl" />
+
+    {/* Adjusted Label Position */}
+    {label && (
+      <div className="absolute inset-0 flex justify-center text-white font-bold text-center z-10 px-4 pt-[2rem]">
+        <span className="text-3xl sm:text-[62px] pt-[20rem] font-sans leading-tight max-w-[90%]">
+          {label}
+        </span>
+      </div>
+    )}
+  </div>
+)
+
+// Carousel Images
 const carouselItems = [
-  { src: "/assets/carousel/dubbingImage.png" },
-  { src: "/assets/carousel/translationImage.png" },
-  { src: "/assets/carousel/captioningImage.png" },
-  { src: "/assets/carousel/recording.png" },
-  { src: "/assets/carousel/scriptWriting.png" },
-  { src: "/assets/carousel/audioVisual.png" },
+  { src: "/assets/carousel/img1.jpg", label: "Dubbing" },
+  { src: "/assets/carousel/img2.jpg", label: "Translation" },
+  { src: "/assets/carousel/img3.jpg", label: "Captioning" },
+  { src: "/assets/carousel/img4.jpg", label: "Recording" },
+  { src: "/assets/carousel/img5.jpg", label: "Audio Visual" },
+  { src: "/assets/carousel/img6.jpg", label: "Script Writing" },
 ]
 
 export default function OurOffers() {
@@ -46,8 +55,8 @@ export default function OurOffers() {
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
     handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const isMobile = windowWidth <= 768
@@ -55,13 +64,13 @@ export default function OurOffers() {
   const numSlides = Math.ceil(carouselItems.length / itemsPerSlide)
 
   useEffect(() => {
-    if (currentIndex >= numSlides) setCurrentIndex(numSlides - 1)
+    if (currentIndex >= numSlides) setCurrentIndex(0)
   }, [numSlides, currentIndex])
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isPaused) {
-        setCurrentIndex(prev => prev === numSlides - 1 ? 0 : prev + 1)
+        setCurrentIndex((prev) => (prev === numSlides - 1 ? 0 : prev + 1))
       }
     }, 3000)
     return () => clearInterval(interval)
@@ -75,17 +84,17 @@ export default function OurOffers() {
   }, [currentIndex, controls])
 
   return (
-    <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <section id="service" className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
       <motion.h1
-        className="text-center font-bold font-archivo-black text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-12"
+        className="text-center font-bold font-archivo-black text-4xl sm:text-5xl lg:text-6xl text-yellow-500 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Our Offers
+        We Offer
       </motion.h1>
-      
-      <p className="text-white font-sans text-center px-4 md:px-[5rem] mb-10">
+
+      <p className="text-gray-300 font-sans text-center px-4 md:px-[5rem] mb-10 italic">
         Digi-8 Studios has the staff and expertise needed to generate fresh and dynamic audio-visual <br className="hidden md:block" /> 
         projects for television, and a well-developed instinct for content that draws viewers in.
       </p>
@@ -96,17 +105,13 @@ export default function OurOffers() {
         onMouseLeave={() => setIsPaused(false)}
       >
         <div className="relative overflow-hidden w-full">
-          <motion.div className="flex" animate={controls}>
+          <motion.div
+            className="flex gap-2 snap-x snap-mandatory"
+            animate={controls}
+          >
             {carouselItems.map((item, index) => (
-              <div 
-                key={index} 
-                className="w-full md:w-1/3 flex-shrink-0 h-[400px] md:h-[630px] px-4"
-              >
-                <CarouselItem 
-                  {...item}
-                  className="brightness-110 contrast-110"
-                  imgClassName="h-full w-full object-cover rounded-lg"
-                />
+              <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-2">
+                <CarouselItem {...item} />
               </div>
             ))}
           </motion.div>
@@ -118,7 +123,7 @@ export default function OurOffers() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-4 h-4 md:w-3 md:h-3 rounded-full transition-colors duration-300 ${
-                currentIndex === index ? "bg-[#F4B301]" : "bg-gray-400"
+                currentIndex === index ? "bg-yellow-500" : "bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

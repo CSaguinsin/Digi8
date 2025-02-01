@@ -24,7 +24,7 @@ export default function OurStory() {
   }, [images.length]);
 
   return (
-    <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="bg-gradient-to-b from-gray-900 to-gray-800 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <motion.h1
         className="text-center font-bold font-archivo-black text-3xl sm:text-4xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-8 sm:mb-12"
         initial={{ opacity: 0, y: -20 }}
@@ -34,8 +34,8 @@ export default function OurStory() {
         Our Story
       </motion.h1>
       <div className="max-w-7xl mx-auto">
-        <Card className="border-transparent">
-          <CardContent className="p-4 sm:p-6">
+        <div className="bg-transparent">
+          <div className="p-4 sm:p-6">
             <div className="flex flex-col lg:flex-row lg:gap-8 gap-6">
               {/* Stacked Carousel Container */}
               <div className="lg:w-1/2">
@@ -81,31 +81,30 @@ export default function OurStory() {
 
               {/* Text Content */}
               <div className="lg:w-1/2 flex flex-col justify-center">
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.2 }}
-  >
-    <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed sm:leading-loose text-justify">
-      <strong className="font-semibold text-white">Digi-8 Studios</strong> has 
-      a unique pool of talents — the very best and seasoned voice actors/dubbers 
-      in the country as well as{' '}
-      <strong className="font-semibold text-white">scriptwriters, translators, 
-      captionists, and sound engineers</strong>. Our voice actors and dubbers 
-      can work effectively not only in Filipino and English, but also in different 
-      Filipino languages such as Ilocano and Cebuano.
-    </p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed sm:leading-loose text-justify">
+                    <strong className="font-semibold text-white">Digi-8 Studios</strong> has 
+                    a unique pool of talents — the very best and seasoned voice actors/dubbers 
+                    in the country as well as{' '}
+                    <strong className="font-semibold text-white">scriptwriters, translators, 
+                    captionists, and sound engineers</strong>. Our voice actors and dubbers 
+                    can work effectively not only in Filipino and English, but also in different 
+                    Filipino languages such as Ilocano and Cebuano.
+                  </p>
 
-    <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl leading-relaxed sm:leading-loose text-justify">
-      Armed with these resources, as well as up-to-date hardware and software, 
-      we are committed to providing the best production services to our clients.
-    </p>
-  </motion.div>
-</div>
-
+                  <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl leading-relaxed sm:leading-loose text-justify">
+                    Armed with these resources, as well as up-to-date hardware and software, 
+                    we are committed to providing the best production services to our clients.
+                  </p>
+                </motion.div>
+              </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

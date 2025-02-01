@@ -43,7 +43,7 @@ export default function Testimonials() {
       role: "Independent Artist",
       content: "The team at Digi8 transformed my vision into reality! The sound quality is impeccable, and the entire process was seamless. From recording to mixing, their attention to detail and creativity brought my music to life. I cant wait to work with them again!",
       rating: 5,
-      image: "/alex-rivera.jpg" 
+      image: "/assets/logo/testimonial_Image.png" 
     },
     {
       id: 2,
@@ -51,7 +51,7 @@ export default function Testimonials() {
       role: "Podcaster",
       content: "Ive never experienced such a professional and welcoming studio environment. The engineers at [Studio Name] are experts in their craft, offering valuable insights that took my podcast to the next level. Highly recommend them for anyone looking to create top-notch content!",
       rating: 5,
-      image: "/alex-rivera.jpg" 
+      image: "/assets/logo/testimonial_Image.png" 
     },
     {
       id: 3,
@@ -59,7 +59,7 @@ export default function Testimonials() {
       role: "Independent Artist",
       content: "The team at Digi8 transformed my vision into reality! The sound quality is impeccable, and the entire process was seamless. From recording to mixing, their attention to detail and creativity brought my music to life. I cant wait to work with them again!",
       rating: 5,
-      image: "/alex-rivera.jpg" 
+      image: "/assets/logo/testimonial_Image.png" 
     },
     {
       id: 4,
@@ -67,7 +67,7 @@ export default function Testimonials() {
       role: "Independent Artist",
       content: "The team at Digi8 transformed my vision into reality! The sound quality is impeccable, and the entire process was seamless. From recording to mixing, their attention to detail and creativity brought my music to life. I cant wait to work with them again!",
       rating: 5,
-      image: "/alex-rivera.jpg" 
+      image: "/assets/logo/testimonial_Image.png" 
     },
   ]
 
@@ -114,7 +114,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 py-20 px-4">
+    <section id="testimonials" className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 py-20 px-4">
       <h1 className="text-left px-20 font-bold font-archivo-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-8 md:mb-12">
         Testimonials
       </h1>

@@ -53,7 +53,7 @@ export default function OurEdge() {
                 She has consistently been the most sought-after dubbing supervisor among the countrys top-tier, award-winning actors, earning a stellar reputation for her expertise and dedication. With her skillful direction, she has contributed to countless successful projects, elevating the standards of voice work in the industry.
               </p>
               <p className="text-gray-300 font-sans text-base">
-                CMA Network Inc. is proud to be one of their long-standing and satisfied clients, further highlighting the lasting impact of her work and the trust she has built with leading networks.
+                GMA Network Inc. is proud to be one of their long-standing and satisfied clients, further highlighting the lasting impact of her work and the trust she has built with leading networks.
               </p>
             </div>
           </motion.div>

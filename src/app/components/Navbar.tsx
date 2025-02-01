@@ -15,6 +15,21 @@ const Navbar = () => {
     setMounted(true)
   }, [])
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId) as HTMLElement | null;
+    if (element) {
+      const navbarHeight = 64; // Adjust according to your navbar height
+      const elementPosition = element.offsetTop - navbarHeight;
+  
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+  
+
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Service", href: "#service" },
@@ -43,14 +58,14 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  href={item.href}
+                  onClick={() => scrollToSection(item.href)}
                   className="text-[#F5B301] font-sans hover:text-[#F5B301]/80 transition-colors
-                           px-3 py-2 text-sm md:text-base"
+                           px-3 py-2 text-sm md:text-base cursor-pointer"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -64,7 +79,7 @@ const Navbar = () => {
             >
               <span className="text-sm font-medium">Work with us!</span>
             </a>
-            <button
+            {/* <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
             >
@@ -73,7 +88,7 @@ const Navbar = () => {
               ) : (
                 <Moon size={20} className="text-white" />
               )}
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,15 +117,14 @@ const Navbar = () => {
       <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} transition-all duration-300`}>
         <div className="bg-black/95 px-4 py-4 space-y-2">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.name}
-              href={item.href}
-              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg
-                       transition-colors font-sans"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => scrollToSection(item.href)}
+              className="block w-full px-4 py-3 text-white hover:bg-white/10 rounded-lg
+                       transition-colors font-sans text-left"
             >
               {item.name}
-            </Link>
+            </button>
           ))}
           <div className="pt-4 mt-4 border-t border-white/10">
             <a
