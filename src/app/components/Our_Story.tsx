@@ -1,11 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function OurStory() {
   const images = [
@@ -13,104 +10,100 @@ export default function OurStory() {
     { src: "/assets/graphics/Digi8-WebMat2.jpg", alt: "Image 2" },
     { src: "/assets/graphics/Digi8-WebMat3.jpg", alt: "Image 3" },
     { src: "/assets/graphics/Digi8-WebMat4.jpg", alt: "Image 4" },
-  ]
+  ];
 
-  const [currentImage, setCurrentImage] = useState(0)
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length)
-    }, 5000)
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [images.length])
-
-  const handleImageChange = (direction: "next" | "prev") => {
-    if (direction === "next") {
-      setCurrentImage((prev) => (prev + 1) % images.length)
-    } else {
-      setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
-    }
-  }
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="bg-gradient-to-b from-gray-900 to-gray-800 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <motion.h1
-    className="text-center font-bold font-archivo-black text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-12"
-    initial={{ opacity: 0, y: -20 }}
+        className="text-center font-bold font-archivo-black text-3xl sm:text-4xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-8 sm:mb-12"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         Our Story
       </motion.h1>
       <div className="max-w-7xl mx-auto">
-        <Card className="bg-gray-800 border-gray-700">
-          <CardContent className="p-6">
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full mb-8">
-              {images.map((image, index) => (
+        <div className="bg-transparent">
+          <div className="p-4 sm:p-6">
+            <div className="flex flex-col lg:flex-row lg:gap-8 gap-6">
+              {/* Stacked Carousel Container */}
+              <div className="lg:w-1/2">
+                <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full mb-6 sm:mb-8">
+                  <AnimatePresence initial={false}>
+                    {images.map(
+                      (image, index) =>
+                        currentImage === index && (
+                          <motion.div
+                            key={index}
+                            className="absolute inset-0 h-full w-full"
+                            initial={{ scale: 0.9, y: 30, opacity: 0 }}
+                            animate={{
+                              scale: 1,
+                              y: 0,
+                              opacity: 1,
+                              zIndex: 40,
+                            }}
+                            exit={{
+                              scale: 0.9,
+                              y: -30,
+                              opacity: 0,
+                              zIndex: 10,
+                            }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            <div className="relative h-full w-full">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-3xl shadow-lg sm:shadow-2xl border border-gray-700 sm:border-2"
+                                priority={index === 0}
+                              />
+                            </div>
+                          </motion.div>
+                        )
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <div className="lg:w-1/2 flex flex-col justify-center">
                 <motion.div
-                  key={index}
-                  className="absolute inset-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: index === currentImage ? 1 : 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <Image
-                    src={image.src || "/placeholder.svg"}
-                    alt={image.alt}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                    priority={index === 0}
-                  />
+                  <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed sm:leading-loose text-justify">
+                    <strong className="font-semibold text-white"> Digi-8 Studios </strong> boasts its own high-quality equipment alongside a distinguished team of
+                      professionals. Our talent pool includes the best and most experienced voice actors and dubbers
+                      in the country, in addition to {' '}
+                      <strong className="font-semibold text-white">skilled scriptwriters, translators, captionists, and sound engineers.</strong>
+                      Our voice actors and dubbers are proficient in Filipino and English, as well as various Filipino
+                      dialects like Ilocano and Cebuano.
+                  </p>
+
+                  <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl leading-relaxed sm:leading-loose text-justify">
+                    With access to these exceptional resources and the latest hardware and software, clients can
+                    be confident that they will receive top-notch service for their production needs.
+                  </p>
                 </motion.div>
-              ))}
-              <div className="absolute inset-0 flex items-center justify-between p-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleImageChange("prev")}
-                  className="bg-black/50 hover:bg-black/70 text-white"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleImageChange("next")}
-                  className="bg-black/50 hover:bg-black/70 text-white"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </Button>
               </div>
             </div>
-            <div className="flex justify-center space-x-2 mb-8">
-              {images.map((_, index) => (
-                <Button
-                  key={index}
-                  variant="ghost"
-                  size="sm"
-                  className={`w-3 h-3 rounded-full p-0 ${index === currentImage ? "bg-yellow-400" : "bg-gray-600"}`}
-                  onClick={() => setCurrentImage(index)}
-                />
-              ))}
-            </div>
-            <motion.p
-              className="text-gray-300 text-lg sm:text-xl leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Digi-8 Studios boasts a unique pool of talents — the very best and seasoned voice actors and dubbers in
-              the country, alongside skilled scriptwriters, translators, captionists, and sound engineers. Our voice
-              actors and dubbers excel not only in Filipino and English but also in various Filipino languages such as
-              Ilocano and Cebuano. Equipped with these exceptional resources and cutting-edge hardware and software, we
-              are dedicated to delivering unparalleled production services to our clients.
-            </motion.p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
-

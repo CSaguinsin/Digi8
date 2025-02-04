@@ -20,7 +20,7 @@ export default function ContactUs() {
         <div className="space-y-8">
           <div className="flex items-start space-x-3">
             <MapPin className="w-6 h-6 text-[#F4B301DB] flex-shrink-0 mt-1" />
-            <p className="text-white text-lg">
+            <p className="text-white text-lg font-sans">
               #8 Kamagong Street, Violago Homes 3, Visayas Avenue, Quezon City, Manila, Philippines.
             </p>
           </div>
@@ -28,28 +28,31 @@ export default function ContactUs() {
           <div className="flex items-center space-x-3">
             <Phone className="w-6 h-6 text-[#F4B301DB]" />
             <div>
-              <span className="text-[#F4B301DB] text-lg font-medium">Telephone</span>
-              <span className="text-white text-lg ml-2">: +632 83563948</span>
+              <span className="text-[#F4B301DB] text-lg font-sans">Telephone</span>
+              <span className="text-white font-sans text-lg ml-2">: +632 453 6232</span>
             </div>
           </div>
 
           <div className="flex items-center space-x-3">
             <Smartphone className="w-6 h-6 text-[#F4B301DB]" />
             <div>
-              <span className="text-[#F4B301DB] text-lg font-medium">Cell phone</span>
-              <span className="text-white text-lg ml-2">: +63917 1446462</span>
+              <span className="text-[#F4B301DB] text-lg font-sans">Cell phone</span>
+              <span className="text-white text-lg ml-2 font-sans">:  +63917 893 5829</span>
             </div>
           </div>
 
           <div className="flex items-center space-x-3">
             <Mail className="w-6 h-6 text-[#F4B301DB]" />
             <div>
-              <span className="text-[#F4B301DB] text-lg font-medium">Email</span>
-              <span className="text-white text-lg ml-2">: digi8studios@yahoo.com</span>
+              <span className="text-[#F4B301DB] text-lg font-sans">Email</span>
+              <span className="text-white text-lg ml-2 font-sans">: digi8studios@yahoo.com</span>
             </div>
           </div>
 
-          <Button className="mt-8 bg-gray-200 text-gray-800 hover:bg-gray-300 px-8 py-2 rounded-md text-lg">
+          <Button 
+            className="mt-8 bg-gray-200 rounded-xl font-sans text-gray-800 hover:bg-gray-300 px-8 py-2  text-lg"
+            onClick={() => window.location.href = 'mailto:digi8studios@yahoo.com'}
+          >
             Contact Us
           </Button>
         </div>
@@ -69,4 +72,3 @@ export default function ContactUs() {
     </section>
   )
 }
-

@@ -14,6 +14,7 @@ export default withMT({
     extend: {
 		fontFamily: {
 			'archivo-black': ['var(--font-archivo-black)', 'sans-serif'],
+			sans: ['var(--font-poppins)', 'sans-serif'],
 		  },
   		colors: {
   			background: 'hsl(var(--background))',
