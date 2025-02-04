@@ -19,7 +19,7 @@ export default function HeroSection() {
                 </div>
                 
                 {/* Hero content with vertical spacing */}
-                <div className="relative z-20 pt-16 md:pt-24 lg:pt-28">
+                <div className="relative z-20  md:pt-24 lg:pt-28 pt-[8rem]">
                     <HeroComponent />
                 </div>
             </div>

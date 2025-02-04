@@ -1,19 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useTheme } from "next-themes"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import {  Menu, X } from "lucide-react"
 
 const Navbar = () => {
-  const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId) as HTMLElement | null;
@@ -93,7 +88,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <button
+            {/* <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full hover:bg-white/10"
             >
@@ -102,7 +97,7 @@ const Navbar = () => {
               ) : (
                 <Moon size={20} className="text-white" />
               )}
-            </button>
+            </button> */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white hover:bg-white/10 p-2 rounded-md"

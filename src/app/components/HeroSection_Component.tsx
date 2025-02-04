@@ -30,10 +30,8 @@ export default function HeroComponent() {
 
       {/* Text content */}
       <div className="flex flex-col items-center gap-4 md:gap-6 mt-[13px]">
-        <h1 className="text-white text-center text-[21px] font-sans md:text-2xl leading-normal md:leading-tight max-w-[90%]">
-          One of the leading companies in the Philippines
-          <br className="hidden md:block" />
-          Offering complete audio-visual post-production services
+        <h1 className="text-white text-center text-[16px] font-sans md:text-2xl leading-normal md:leading-tight max-w-[90%] lg:max-w-[800px]">
+          One of the leading companies in the Philippines offering complete audio-visual post-production services
         </h1>
       </div>
 

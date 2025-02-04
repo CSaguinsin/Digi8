@@ -54,7 +54,9 @@ export default function OurOffers() {
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
-    handleResize()
+    if (typeof window !== 'undefined') {
+      handleResize()
+    }
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -105,18 +107,23 @@ export default function OurOffers() {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Carousel Wrapper */}
-        <div className="relative overflow-hidden w-full">
+        <div className="relative overflow-hidden w-full max-w-[95vw] mx-auto">
           <motion.div
             className="flex flex-nowrap w-full"
             animate={controls}
           >
             {Array.from({ length: numSlides }).map((_, slideIndex) => (
               <div key={slideIndex} className="w-full flex flex-shrink-0 gap-4">
-                {carouselItems.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map((item, index) => (
-                  <div key={index} className="w-1/3 px-2 md:px-4">
-                    <CarouselItem {...item} />
-                  </div>
-                ))}
+                {carouselItems
+                  .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                  .map((item, index) => (
+                    <div 
+                      key={index} 
+                      className={`${isMobile ? 'w-full' : 'w-1/3'} px-2`}
+                    >
+                      <CarouselItem {...item} />
+                    </div>
+                  ))}
               </div>
             ))}
           </motion.div>
