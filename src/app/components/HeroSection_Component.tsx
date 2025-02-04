@@ -37,31 +37,38 @@ export default function HeroComponent() {
 
       {/* Buttons Container */}
       <div className="flex flex-row flex-wrap justify-center gap-3 md:gap-6 w-full px-4 mt-6 md:mt-8">
-        <button
-          className="rounded-full font-sans py-2 px-4 md:py-4 md:px-8 
-                    text-sm md:text-base font-semibold text-white 
-                    transition-all duration-300 shadow-lg hover:shadow-xl 
-                    bg-gradient-to-r from-yellow-500 to-gray-500
-                    hover:from-yellow-600 hover:to-gray-600
-                    active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50
-                    min-w-[140px] md:min-w-[160px] flex items-center justify-center gap-2"
-          type="button"
-        >
-          View Our Work
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="w-4 h-4 md:w-5 md:h-5 ml-2" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            fill="none" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
-        </button>
+      <button
+  className="rounded-full font-sans py-2 px-4 md:py-4 md:px-8 
+            text-sm md:text-base font-semibold text-white 
+            transition-all duration-300 shadow-lg hover:shadow-xl 
+            bg-gradient-to-r from-yellow-500 to-gray-500
+            hover:from-yellow-600 hover:to-gray-600
+            active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50
+            min-w-[140px] md:min-w-[160px] flex items-center justify-center gap-2"
+  type="button"
+  onClick={() => {
+    const section = document.getElementById("service");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  View Our Work
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    className="w-4 h-4 md:w-5 md:h-5 ml-2" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    fill="none" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
+</button>
+
 
         <button
           className="rounded-full font-sans py-2 px-4 md:py-4 md:px-8 border-2 border-white 
