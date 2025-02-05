@@ -7,14 +7,14 @@ export default function OurEdge() {
   return (
     <section className="bg-gray-900 py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.h1
-          className="text-left font-bold font-archivo-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-8 md:mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Our Edge
-        </motion.h1>
+      <motion.h1
+  className="overflow-visible text-left font-bold font-archivo-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-8 md:mb-12 leading-[1.2] pb-2"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  Our Edge
+</motion.h1>
         <motion.p
   className="text-gray-300 font-sans text-base sm:text-lg md:text-lg mb-8 md:mb-12 text-left max-w-none"
   initial={{ opacity: 0, y: 20 }}

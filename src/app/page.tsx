@@ -8,10 +8,12 @@ import Studio from "./components/StudioComponent";
 import Testimonials from "./components/Testimonials";
 import OurEdge from "./components/Our_Edge"
 import ContactUs from "./components/ContactUs"
+import HeroSection from "./components/HeroSection"
 
 export default function Home() {
   return (
     <>
+        <HeroSection />
         <OurStory />
         <OurOffers />
         <OurEdge />
