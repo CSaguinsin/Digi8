@@ -57,7 +57,7 @@ export default function OurEdge() {
             
               <p className="text-gray-300 font-sans text-base">
               Renowned for her expertise, she has remained the most in-demand
-              dubbing supervisor for the country's elite and award-winning actors.Digi8 Studios takes pride in being one of the foremost providers of
+              dubbing supervisor for the countrys elite and award-winning actors.Digi8 Studios takes pride in being one of the foremost providers of
               comprehensive audio-video post-production services in the Philippines, including script
               translation, dubbing, and closed captioning.               
                 

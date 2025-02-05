@@ -17,7 +17,7 @@ export default function Studio() {
       <p className="text-white font-sans text-center text-base sm:text-lg md:text-l px-4 sm:px-12 md:px-20 lg:px-40 mb-10 leading-relaxed">
       Over the years, Digi8 Studios has established strong partnerships with its clients right from the
       beginning of their relationships. By engaging in ongoing active consultation, Digi8 has gained a
-      profound and precise understanding of its clients' requirements.
+      profound and precise understanding of its clients requirements.
       </p>      
       <StudioCarousel />
     </section>
