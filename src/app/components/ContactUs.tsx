@@ -29,7 +29,7 @@ export default function ContactUs() {
             <Phone className="w-6 h-6 text-[#F4B301DB]" />
             <div>
               <span className="text-[#F4B301DB] text-lg font-sans">Telephone</span>
-              <span className="text-white font-sans text-lg ml-2">: +632 83563948</span>
+              <span className="text-white font-sans text-lg ml-2">: +632 453 6232</span>
             </div>
           </div>
 
@@ -37,7 +37,7 @@ export default function ContactUs() {
             <Smartphone className="w-6 h-6 text-[#F4B301DB]" />
             <div>
               <span className="text-[#F4B301DB] text-lg font-sans">Cell phone</span>
-              <span className="text-white text-lg ml-2 font-sans">: +63917 1446462</span>
+              <span className="text-white text-lg ml-2 font-sans">:  +63917 893 5829</span>
             </div>
           </div>
 

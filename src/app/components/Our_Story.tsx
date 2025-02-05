@@ -91,18 +91,17 @@ export default function OurStory() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed sm:leading-loose text-justify">
-                    <strong className="font-semibold text-white">Digi-8 Studios</strong> has 
-                    a unique pool of talents — the very best and seasoned voice actors/dubbers 
-                    in the country as well as{' '}
-                    <strong className="font-semibold text-white">scriptwriters, translators, 
-                    captionists, and sound engineers</strong>. Our voice actors and dubbers 
-                    can work effectively not only in Filipino and English, but also in different 
-                    Filipino languages such as Ilocano and Cebuano.
+                    <strong className="font-semibold text-white"> Digi-8 Studios </strong> boasts its own high-quality equipment alongside a distinguished team of
+                      professionals. Our talent pool includes the best and most experienced voice actors and dubbers
+                      in the country, in addition to {' '}
+                      <strong className="font-semibold text-white">skilled scriptwriters, translators, captionists, and sound engineers.</strong>
+                      Our voice actors and dubbers are proficient in Filipino and English, as well as various Filipino
+                      dialects like Ilocano and Cebuano.
                   </p>
 
                   <p className="text-gray-300 font-sans text-base sm:text-lg lg:text-xl leading-relaxed sm:leading-loose text-justify">
-                    Armed with these resources, as well as up-to-date hardware and software, 
-                    we are committed to providing the best production services to our clients.
+                    With access to these exceptional resources and the latest hardware and software, clients can
+                    be confident that they will receive top-notch service for their production needs.
                   </p>
                 </motion.div>
               </div>

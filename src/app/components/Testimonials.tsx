@@ -39,35 +39,35 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Alex Rivera",
-      role: "Independent Artist",
-      content: "The team at Digi8 transformed my vision into reality! The sound quality is impeccable, and the entire process was seamless. From recording to mixing, their attention to detail and creativity brought my music to life. I cant wait to work with them again!",
+      name: "Carlos Mendoza",
+      role: "Senior Producer at VisionWave Productions",
+      content: "Digi8 Studios exceeded our expectations with their exceptional dubbing and post-production services. Their team’s attention to detail and commitment to quality brought our project to life in ways we never imagined. We highly recommend them for any audio-visual needs!",
       rating: 5,
-      image: "/assets/logo/testimonial_Image.png" 
+      image: "/assets/logo/test3.jpg" 
     },
     {
       id: 2,
-      name: "Jamie Cruz",
-      role: "Podcaster",
-      content: "Ive never experienced such a professional and welcoming studio environment. The engineers at [Studio Name] are experts in their craft, offering valuable insights that took my podcast to the next level. Highly recommend them for anyone looking to create top-notch content!",
+      name: "Liana Cruz",
+      role: "Creative Director at Zenith Films",
+      content: "Working with Digi8 Studios was a seamless and professional experience. Their talented voice actors and sound engineers ensured that our project had the highest quality dubbing, making it accessible to a wider audience. We truly appreciate their dedication and expertise!",
       rating: 5,
-      image: "/assets/logo/testimonial_Image.png" 
+      image: "/assets/logo/test2.jpg" 
     },
     {
       id: 3,
-      name: "Alex Rivera",
-      role: "Independent Artist",
-      content: "The team at Digi8 transformed my vision into reality! The sound quality is impeccable, and the entire process was seamless. From recording to mixing, their attention to detail and creativity brought my music to life. I cant wait to work with them again!",
+      name: "Marco Villanueva",
+      role: "Executive Producer at Echo House",
+      content: "The team at Digi8 Studios is truly top-notch! From script translation to closed captioning, they handled our project with precision and efficiency. Their commitment to excellence is why we continue to trust them with our post-production needs.",
       rating: 5,
       image: "/assets/logo/testimonial_Image.png" 
     },
     {
       id: 4,
-      name: "Alex Rivera",
-      role: "Independent Artist",
-      content: "The team at Digi8 transformed my vision into reality! The sound quality is impeccable, and the entire process was seamless. From recording to mixing, their attention to detail and creativity brought my music to life. I cant wait to work with them again!",
+      name: "Samantha Reyes",
+      role: "Head of Content at Aurora Broadcasting",
+      content: "Digi8 Studios has been our go-to partner for post-production services for years. Their ability to adapt to different projects while maintaining high-quality results sets them apart. We always look forward to collaborating with their talented team!",
       rating: 5,
-      image: "/assets/logo/testimonial_Image.png" 
+      image: "/assets/logo/test1.jpg" 
     },
   ]
 

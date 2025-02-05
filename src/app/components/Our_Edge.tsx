@@ -22,14 +22,15 @@ export default function OurEdge() {
   transition={{ duration: 0.5, delay: 0.2 }}
 >
   <span className="ml-8">
-    Honed by years of experience in the Philippine movie industry,{" "}
+    With years of experience in the Philippine film industry, {" "}
     <span className="text-white font-semibold">
       Digi-8 Studios
     </span>{" "}
-    has the staff and
+    boasts a talented team
   </span>{" "}
-  expertise needed to generate fresh and dynamic audio-visual projects for television, utilizing skill and discipline for regular production, and a well-developed instinct for content that draws viewers in.
-</motion.p>
+  equipped to produce innovative and engaging audio-visual content for television. Their
+  approach combines skillful execution and disciplined production with a finely tuned intuition for
+  creating captivating content that attracts viewers.</motion.p>
 
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -45,15 +46,21 @@ export default function OurEdge() {
                 <span className="text-white font-semibold">
                     Mrs. Lucy Quinto de Guzman {" "}
                   </span>
-                  The Founder of Digi-8 Studios can be counted as a pioneer in motion picture{" "}
+                  the Founder and General Manager of Digi8 Studios,{" "}
                 </span>                
-                dubbing in the Philippines. She was the founding President of the Film Dubbers Association of the Philippines (FILMDAP), and has to her name about 80 percent of dubbing projects in the Philippine motion picture industry for major film studios such as Regal Films, Star Cinema, Viva, and other production outfits including independent film studios.
-              </p>
+                is recognized
+                as one of the pioneers of motion picture dubbing in the Philippines. As the founding President of
+                the Film Dubbers Association of the Philippines (FILMDAP), she has been instrumental in
+                approximately 80 percent of the dubbing projects within the Philippine film landscape,
+                collaborating with major studios like Regal Films, Star Cinema, Viva, and many independent
+                production companies.               </p>
             
               <p className="text-gray-300 font-sans text-base">
-                She has consistently been the most sought-after dubbing supervisor among the countrys top-tier, award-winning actors, earning a stellar reputation for her expertise and dedication. With her skillful direction, she has contributed to countless successful projects, elevating the standards of voice work in the industry.
-              
-                GMA Network Inc. is proud to be one of their long-standing and satisfied clients, further highlighting the lasting impact of her work and the trust she has built with leading networks.
+              Renowned for her expertise, she has remained the most in-demand
+              dubbing supervisor for the country's elite and award-winning actors.Digi8 Studios takes pride in being one of the foremost providers of
+              comprehensive audio-video post-production services in the Philippines, including script
+              translation, dubbing, and closed captioning.               
+                
               </p>
             </div>
           </motion.div>

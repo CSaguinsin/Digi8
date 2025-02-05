@@ -35,7 +35,6 @@ const clients = [
 ]
 
 const additionalClients = [
-  "Sowers of the Word Ministry",
   "Asia Pacific Radio Ministry",
   "God's Little Creations",
   "Kaizz Ventures",
@@ -52,7 +51,7 @@ export default function Client_Partners() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                Clients & Partners
+                Our Clients
             </motion.h1>
 
             <div className="container mx-auto max-w-7xl">
