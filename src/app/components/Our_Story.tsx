@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "../components/Navbar";
 
 export default function OurStory() {
   const images = [
@@ -23,6 +24,10 @@ export default function OurStory() {
   }, [images.length]);
 
   return (
+    <>
+                    <div className="sticky top-0 z-50">
+                    <Navbar />
+                </div>
     <section id="about" className="bg-gradient-to-b from-gray-900 to-gray-800 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <motion.h1
         className="text-center font-bold font-archivo-black text-3xl sm:text-4xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-8 sm:mb-12"
@@ -106,5 +111,6 @@ export default function OurStory() {
         </div>
       </div>
     </section>
+    </>
   );
 }

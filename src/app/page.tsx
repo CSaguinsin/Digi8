@@ -13,14 +13,13 @@ import ContactUs from "./components/ContactUs"
 export default function Home() {
   return (
     <>
-        <HeroSection />
         <OurStory />
         <OurOffers />
-        <Client_Partners />
-        <Studio />
-        <Testimonials />
         <OurEdge />
-        <ContactUs />
+        <Studio />
+        <Client_Partners />
+        <Testimonials />
+        <ContactUs />        
         <Footer />
     </>
   );
