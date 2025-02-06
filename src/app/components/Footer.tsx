@@ -38,7 +38,8 @@ export default function Footer() {
             </svg>
         </a>
         <a
-            href="#"
+            href="https://www.facebook.com/Digi8Studios/"
+            target="_blank"
             className="block text-white transition-all duration-500 hover:text-indigo-600"
         >
             <svg
