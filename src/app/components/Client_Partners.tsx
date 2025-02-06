@@ -111,29 +111,31 @@ export default function Client_Partners() {
                     ))}
                 </div>
 
-                {/* Third row of logos */}
-                <div className="grid grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16">
-                    {clients.slice(7).map((client, index) => (
-                        <motion.div
-                            key={index + 7}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: (index + 7) * 0.1 }}
-                            className="relative flex flex-col items-center"
-                        >
-                            <div className="relative aspect-square w-full h-[4rem] md:h-[8rem] lg:h-[10rem] flex items-center justify-center">
-                                <Image
-                                    src={client.image}
-                                    alt={client.name}
-                                    fill
-                                    sizes="(max-width: 768px) 50vw, 25vw"
-                                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300 p-4"
-                                    quality={100}
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+{/* Third row of logos */}
+<div className="grid grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16">
+    {clients.slice(7).map((client, index) => (
+        <motion.div
+            key={index + 7}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: (index + 7) * 0.1 }}
+            className="relative flex flex-col items-center"
+        >
+            {/* Ensuring a consistent aspect ratio and max size */}
+            <div className="relative aspect-square w-full max-w-[10rem] md:max-w-[12rem] lg:max-w-[14rem] flex items-center justify-center">
+                <Image
+                    src={client.image}
+                    alt={client.name}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300 p-4"
+                    quality={100}
+                />
+            </div>
+        </motion.div>
+    ))}
+</div>
+
                 
                 {/* Text clients in one row */}
                 <div className="flex justify-center gap-24 text-center">
