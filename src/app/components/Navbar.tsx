@@ -1,19 +1,23 @@
 "use client"
 
-import { useState } from "react"
+import { useState} from "react"
 import Image from "next/image"
 import Link from "next/link"
-import {  Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 const Navbar = () => {
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled] = useState(false)
+
+
 
 
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId) as HTMLElement | null;
     if (element) {
-      const navbarHeight = 64; // Adjust according to your navbar height
+      const navbarHeight = scrolled ? 64 : 80;
       const elementPosition = element.offsetTop - navbarHeight;
   
       window.scrollTo({
@@ -23,7 +27,6 @@ const Navbar = () => {
     }
     setMobileMenuOpen(false);
   };
-  
 
   const navItems = [
     { name: "About", href: "#about" },
@@ -32,9 +35,13 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="fixed w-full z-50 bg-white/20 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className={`w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/20 backdrop-blur-lg shadow-lg' 
+        : 'bg-white/20 backdrop-blur-sm'
+    } border-b border-white/10`}>
+      <div className="w-full mx-auto">
+        <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -74,30 +81,10 @@ const Navbar = () => {
             >
               <span className="text-sm font-medium">Work with us!</span>
             </a>
-            {/* <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
-            >
-              {mounted && theme === "dark" ? (
-                <Sun size={20} className="text-white" />
-              ) : (
-                <Moon size={20} className="text-white" />
-              )}
-            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
-            {/* <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full hover:bg-white/10"
-            >
-              {mounted && theme === "dark" ? (
-                <Sun size={20} className="text-white" />
-              ) : (
-                <Moon size={20} className="text-white" />
-              )}
-            </button> */}
+          <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white hover:bg-white/10 p-2 rounded-md"
@@ -109,13 +96,13 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} transition-all duration-300`}>
-        <div className="bg-black/95 px-4 py-4 space-y-2">
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-black/95 px-4 py-4 space-y-2">
           {navItems.map((item) => (
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="block w-full px-4 py-3 text-white hover:bg-white/10 rounded-lg
+              className="block w-full text-white hover:bg-white/10 px-4 py-3 rounded-lg
                        transition-colors font-sans text-left"
             >
               {item.name}
@@ -132,7 +119,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-      </div>
+      )}
     </nav>
   )
 }
