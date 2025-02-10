@@ -4,17 +4,7 @@ export default function HeroComponent() {
   return (
     <div className="flex flex-col justify-center items-center relative z-20 pt-5 lg:pt-0 md:pt-[7rem] px-4 pb-10">
       {/* ON AIR Button */}
-      <button
-        type="button"
-        className="rounded-xl border-2 font-archivo-black border-white 
-                  focus:outline-none text-white h-[50px] w-[211px]  
-                  inline-flex items-center justify-center whitespace-nowrap 
-                  bg-red-700 hover:bg-red-800 transition-all duration-300
-                  text-3xl md:text-4xl leading-none 
-                  mb-4 md:mb-0"
-      >
-        ON AIR
-      </button>
+      
 
       {/* Image container */}
       <div className="w-full max-w-[800px] mt-5 md:mt-5 px-2 sm:px-4">
@@ -30,8 +20,8 @@ export default function HeroComponent() {
 
       {/* Text content */}
       <div className="flex flex-col items-center gap-4 md:gap-6 mt-[13px]">
-        <h1 className="text-white text-center text-[16px] font-sans md:text-2xl leading-normal md:leading-tight max-w-[90%] lg:max-w-[800px]">
-          One of the leading companies in the Philippines offering complete audio-visual post-production services.
+        <h1 className="text-white text-center text-[12px] font-sans md:text-2xl leading-normal md:leading-tight max-w-[90%] lg:max-w-[800px]">
+          The leading companies in the Philippines offering complete audio-visual post-production services.
         </h1>
       </div>
 
