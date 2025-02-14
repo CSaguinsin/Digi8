@@ -43,14 +43,14 @@ export default function RootLayout({
           ${archivoBlack.variable} 
           ${poppins.variable}
           antialiased
-          h-full
+          min-h-screen
+          overflow-x-hidden
+          w-full
         `}
       >
-        <div className="background-container">
-          <div className="content-wrapper">
-            {children}
-          </div>
-        </div>
+        <main className="relative w-full">
+          {children}
+        </main>
       </body>
     </html>
   );

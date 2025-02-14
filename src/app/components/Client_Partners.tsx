@@ -4,43 +4,15 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 const clients = [
-  {
-    image: '/assets/clients/GMA Logo.png',
-    name: 'GMA NETWORK'
-  },
-  {
-    image: '/assets/clients/Jesus.png',
-    name: 'THE CHURCH OF JESUS CHRIST OF LATTER-DAY SAINTS'
-  },
-  {
-    image: '/assets/clients/viva.png',
-    name: 'VIVA FILMS'
-    
-  },
-  {
-    image: '/assets/clients/M-Zet Logo.png',
-    name: 'MZET' 
-  },
-  {
-    image: '/assets/clients/meralco.png',
-    name: 'MERALCO'
-  },
-  {
-    image: '/assets/clients/siemens.png',
-    name: 'SIEMENS'
-  },
-  {
-    image: '/assets/clients/solarfilms.png',
-    name: 'SOLAR FILMS'
-  },
-  {
-    image: '/assets/clients/maverick.png',
-    name: 'MAVERICK MEDIA'
-  },
-  {
-    image: '/assets/clients/viden.png',
-    name: 'JUITA VIDEN'
-  }
+  { image: '/assets/clients/GMA Logo.png', name: 'GMA NETWORK' },
+  { image: '/assets/clients/Jesus.png', name: 'THE CHURCH OF JESUS CHRIST OF LATTER-DAY SAINTS' },
+  { image: '/assets/clients/viva.png', name: 'VIVA FILMS' },
+  { image: '/assets/clients/M-Zet Logo.png', name: 'MZET' },
+  { image: '/assets/clients/meralco.png', name: 'MERALCO' },
+  { image: '/assets/clients/siemens.png', name: 'SIEMENS' },
+  { image: '/assets/clients/solarfilms.png', name: 'SOLAR FILMS' },
+  { image: '/assets/clients/maverick.png', name: 'MAVERICK MEDIA' },
+  { image: '/assets/clients/viden.png', name: 'JUITA VIDEN' }
 ]
 
 const additionalClients = [
@@ -51,7 +23,7 @@ const additionalClients = [
 ]
 
 export default function Client_Partners() {
-    return(
+    return (
         <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4 sm:px-6 lg:px-8">
             <motion.h1
                 className="text-center font-bold font-archivo-black text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-[#F4B301DB]/100 to-[#CACACA]/100 bg-clip-text text-transparent mb-16"
@@ -63,8 +35,8 @@ export default function Client_Partners() {
             </motion.h1>
 
             <div className="container mx-auto max-w-7xl">
-                {/* First row of logos */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-16">
+                {/* First row (4 logos on LG, 2 on mobile) */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-16">
                     {clients.slice(0, 4).map((client, index) => (
                         <motion.div
                             key={index}
@@ -87,8 +59,8 @@ export default function Client_Partners() {
                     ))}
                 </div>
 
-                {/* Second row of logos */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20 mb-16">
+                {/* Second row (3 logos on LG, 2 on mobile) */}
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mb-16">
                     {clients.slice(4, 7).map((client, index) => (
                         <motion.div
                             key={index + 4}
@@ -111,34 +83,32 @@ export default function Client_Partners() {
                     ))}
                 </div>
 
-{/* Third row of logos */}
-<div className="grid grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16">
-    {clients.slice(7).map((client, index) => (
-        <motion.div
-            key={index + 7}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: (index + 7) * 0.1 }}
-            className="relative flex flex-col items-center"
-        >
-            {/* Ensuring a consistent aspect ratio and max size */}
-            <div className="relative aspect-square w-full max-w-[10rem] md:max-w-[12rem] lg:max-w-[14rem] flex items-center justify-center">
-                <Image
-                    src={client.image}
-                    alt={client.name}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300 p-4"
-                    quality={100}
-                />
-            </div>
-        </motion.div>
-    ))}
-</div>
+                {/* Third row (2 logos centered on LG, still 2 per row on mobile) */}
+                <div className="grid grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16 lg:justify-center">
+                    {clients.slice(7, 9).map((client, index) => (
+                        <motion.div
+                            key={index + 7}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: (index + 7) * 0.1 }}
+                            className="relative flex flex-col items-center lg:mx-auto"
+                        >
+                            <div className="relative aspect-square w-full h-[12rem] md:h-[14rem] lg:h-[16rem] flex items-center justify-center">
+                                <Image
+                                    src={client.image}
+                                    alt={client.name}
+                                    fill
+                                    sizes="(max-width: 768px) 50vw, 33vw"
+                                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300 p-4"
+                                    quality={100}
+                                />
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
 
-                
-                {/* Text clients in one row */}
-                <div className="flex justify-center gap-24 text-center">
+                {/* Additional Clients - Single Row */}
+                <div className="flex flex-wrap justify-center gap-8 text-center mt-16">
                     {additionalClients.map((client, index) => (
                         <motion.p
                             key={index}
